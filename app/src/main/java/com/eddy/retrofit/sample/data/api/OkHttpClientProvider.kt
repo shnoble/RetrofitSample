@@ -5,6 +5,6 @@ import okhttp3.OkHttpClient
 
 object OkHttpClientProvider {
     @CheckResult
-    fun provideOkHttpClientForGithub(): OkHttpClient = OkHttpClient.Builder().build()
+    fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder().build()
 }
 

@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val okHttpClient = OkHttpClientProvider.provideOkHttpClientForGithub()
-        val retrofit = RetrofitProvider.provideRetrofitForGithub(okHttpClient)
+        val okHttpClient = OkHttpClientProvider.provideOkHttpClient()
+        val retrofit = RetrofitProvider.provideRetrofit(okHttpClient, "https://api.github.com")
         val api = ApiProvider.provideApiForGithub(retrofit)
         githubUserRepository = GithubUserDataRepository(api)
 

@@ -7,10 +7,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitProvider {
     @CheckResult
-    fun provideRetrofitForGithub(client: OkHttpClient): Retrofit =
+    fun provideRetrofit(client: OkHttpClient, baseUrl: String): Retrofit =
             Retrofit.Builder()
                 .client(client)
-                .baseUrl("https://api.github.com")
+                .baseUrl(baseUrl)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 }
